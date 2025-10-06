@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipal));
             label1 = new Label();
             TxtLocalArquivo = new TextBox();
             BtnProcurar = new Button();
@@ -126,6 +127,7 @@
             Controls.Add(BtnProcurar);
             Controls.Add(TxtLocalArquivo);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Converter";
