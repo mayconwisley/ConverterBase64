@@ -15,6 +15,12 @@ public partial class FrmPrincipal : Form
     private void BtnConverter_Click(object sender, EventArgs e)
     {
         RTxtBase64.Clear();
+        if (string.IsNullOrEmpty(TxtLocalArquivo.Text))
+        {
+            MessageBox.Show("Selecione um arquivo para converter!", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return;
+        }
+
         Converter converter = new(TxtLocalArquivo.Text.Trim());
         RTxtBase64.Text = converter.ToBase64();
     }
@@ -27,5 +33,6 @@ public partial class FrmPrincipal : Form
     private void BtnLimpar_Click(object sender, EventArgs e)
     {
         RTxtBase64.Clear();
+        TxtLocalArquivo.Clear();
     }
 }
