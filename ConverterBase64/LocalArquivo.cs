@@ -1,10 +1,10 @@
 ﻿namespace ConverterBase64;
 
-internal class LocalArquivo
+internal sealed class LocalArquivo
 {
     public static string Local()
     {
-        OpenFileDialog openFileDialog = new()
+        using OpenFileDialog openFileDialog = new()
         {
             Multiselect = false
         };
